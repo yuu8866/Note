@@ -13,16 +13,38 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<view xmlns:android="http://schemas.android.com/apk/res/android"
-    class="com.example.android.notepad.NoteEditor$LinedEditText"
-    android:id="@+id/note"
+<!-- 这是笔记编辑界面的布局文件 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/transparent"
-    android:padding="5dp"
-    android:scrollbars="vertical"
-    android:fadingEdge="vertical"
-    android:gravity="top"
-    android:textSize="22sp"
-    android:capitalize="sentences"
-/>
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <!-- 标题输入框 -->
+    <EditText android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/text_title"
+        android:inputType="textCapSentences|textAutoCorrect|textMultiLine"
+        android:imeOptions="actionNone"
+        android:maxLines="1"
+        android:maxLength="50"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+
+    <!-- 内容输入框 - 使用标准 EditText 替代自定义类 -->
+    <EditText
+        android:id="@+id/note"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="top"
+        android:hint="输入笔记内容..."
+        android:inputType="textMultiLine|textCapSentences|textAutoCorrect|textAutoComplete"
+        android:imeOptions="actionNone|flagNoExtractUi"
+        android:scrollbars="vertical"
+        android:fadingEdge="vertical"
+        android:textSize="16sp" />
+
+</LinearLayout>

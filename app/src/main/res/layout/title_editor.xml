@@ -14,30 +14,34 @@
      limitations under the License.
 -->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
-  	android:layout_width="wrap_content" 
-    android:layout_height="wrap_content"
+<!-- 标题编辑对话框的布局 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingLeft="6dip"
-    android:paddingRight="6dip"
-    android:paddingBottom="3dip">
-   					  
-    <EditText android:id="@+id/title" 
-        android:maxLines="1" 
-        android:layout_marginTop="2dp"
-        android:layout_marginBottom="15dp"
+    android:padding="10dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_edit_title"
+        android:textSize="18sp" />
+
+    <!-- 标题输入框 - 关键修改：确保支持中文输入 -->
+    <EditText android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textCapSentences|textAutoCorrect"
+        android:imeOptions="actionDone|flagNoExtractUi"
+        android:maxLines="1"
+        android:maxLength="50"
+        android:textSize="16sp" />
+
+    <Button
         android:layout_width="wrap_content"
-      	android:ems="25"
-        android:layout_height="wrap_content" 
-        android:autoText="true"
-        android:capitalize="sentences"
-        android:scrollHorizontally="true" />
-   		
-    <Button android:id="@+id/ok"
-        android:layout_width="wrap_content" 
-        android:layout_height="wrap_content" 
+        android:layout_height="wrap_content"
         android:layout_gravity="right"
         android:text="@string/button_ok"
         android:onClick="onClickOk" />
-   		
+
 </LinearLayout>

@@ -33,11 +33,14 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.InputFilter;
+import android.text.InputType;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 
 /**
@@ -90,6 +93,19 @@ public class NoteEditor extends Activity {
         // This constructor is used by LayoutInflater
         public LinedEditText(Context context, AttributeSet attrs) {
             super(context, attrs);
+            // 关键修改：确保支持中文输入
+            // 设置输入类型为多行文本，支持中文
+            setInputType(InputType.TYPE_CLASS_TEXT |
+                    InputType.TYPE_TEXT_FLAG_MULTI_LINE |
+                    InputType.TYPE_TEXT_FLAG_CAP_SENTENCES |
+                    InputType.TYPE_TEXT_FLAG_AUTO_CORRECT);
+
+            // 设置IME选项，确保中文输入法正常工作
+            setImeOptions(EditorInfo.IME_ACTION_NONE | EditorInfo.IME_FLAG_NO_EXTRACT_UI);
+
+            // 移除任何可能限制输入的过滤器
+            setFilters(new InputFilter[0]);
+
 
             // Creates a Rect and a Paint object, and sets the style and color of the Paint object.
             mRect = new Rect();

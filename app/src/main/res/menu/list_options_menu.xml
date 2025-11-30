@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <!--  This is our one standard application action (creating a new note). -->
     <item android:id="@+id/menu_add"
           android:icon="@drawable/ic_menu_compose"
@@ -12,4 +13,12 @@
           android:icon="@drawable/ic_menu_compose"
           android:title="@string/menu_paste"
           android:alphabeticShortcut='p' />
+
+    <!-- 添加搜索菜单项 -->
+    <!-- 修改点：使用 app:actionViewClass 替代 android:actionViewClass，并指向 Support Library 的 SearchView -->
+    <item android:id="@+id/menu_search"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="@string/menu_search"
+        android:showAsAction="ifRoom|collapseActionView"
+        android:actionViewClass="android.widget.SearchView" />
 </menu>
