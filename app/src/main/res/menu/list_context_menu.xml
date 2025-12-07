@@ -4,6 +4,10 @@
           android:title="@string/menu_open" />
     <item android:id="@+id/context_copy"
           android:title="@string/menu_copy" />
+    <!-- 新增：设置分类 -->
+    <item android:id="@+id/context_set_category"
+        android:title="@string/menu_set_category" />
+
     <item android:id="@+id/context_delete"
-          android:title="@string/menu_delete" />
+        android:title="@string/menu_delete" />
 </menu>

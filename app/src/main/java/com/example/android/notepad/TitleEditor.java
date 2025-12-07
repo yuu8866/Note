@@ -83,11 +83,11 @@ public class TitleEditor extends Activity {
          */
 
         mCursor = managedQuery(
-            mUri,        // The URI for the note that is to be retrieved.
-            PROJECTION,  // The columns to retrieve
-            null,        // No selection criteria are used, so no where columns are needed.
-            null,        // No where columns are used, so no where values are needed.
-            null         // No sort order is needed.
+                mUri,        // The URI for the note that is to be retrieved.
+                PROJECTION,  // The columns to retrieve
+                null,        // No selection criteria are used, so no where columns are needed.
+                null,        // No where columns are used, so no where values are needed.
+                null         // No sort order is needed.
         );
 
         // Gets the View ID for the EditText box
@@ -152,10 +152,10 @@ public class TitleEditor extends Activity {
              * android.content.AsyncQueryHandler or android.os.AsyncTask.
              */
             getContentResolver().update(
-                mUri,    // The URI for the note to update.
-                values,  // The values map containing the columns to update and the values to use.
-                null,    // No selection criteria is used, so no "where" columns are needed.
-                null     // No "where" columns are used, so no "where" values are needed.
+                    mUri,    // The URI for the note to update.
+                    values,  // The values map containing the columns to update and the values to use.
+                    null,    // No selection criteria is used, so no "where" columns are needed.
+                    null     // No "where" columns are used, so no "where" values are needed.
             );
 
         }

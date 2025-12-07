@@ -1,15 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <!--  This is our one standard application action (creating a new note). -->
-    <item android:id="@+id/menu_add"
-          android:icon="@drawable/ic_menu_compose"
-          android:title="@string/menu_add"
-          android:alphabeticShortcut='a'
-          android:showAsAction="always" />
-    <!--  If there is currently data in the clipboard, this adds a PASTE menu item to the menu
-          so that the user can paste in the data.. -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_add"
+        android:title="Add Note"
+        android:icon="@drawable/ic_menu_add"
+        app:showAsAction="ifRoom" />
+
+
+    <!-- 分类过滤 -->
+    <item
+        android:id="@+id/menu_filter_category"
+        android:title="@string/menu_filter_category"
+        android:icon="@android:drawable/ic_menu_sort_by_size"
+        app:showAsAction="ifRoom" />
+
+    <!-- 粘贴 -->
     <item android:id="@+id/menu_paste"
-          android:icon="@drawable/ic_menu_compose"
-          android:title="@string/menu_paste"
-          android:alphabeticShortcut='p' />
+        android:title="@string/menu_paste"
+        android:icon="@android:drawable/ic_menu_set_as"
+        app:showAsAction="ifRoom" />
+
+    <!-- 搜索 -->
+    <item
+        android:id="@+id/menu_search"
+        android:title="@string/menu_search"
+        android:icon="@android:drawable/ic_menu_search"
+        app:actionViewClass="android.widget.SearchView"
+        app:showAsAction="collapseActionView|always" />
 </menu>
